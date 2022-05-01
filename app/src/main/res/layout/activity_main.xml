@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerLayout"
+    tools:context=".app.activity.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E5E5E5">
+        
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_bar"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bottom_navigation_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/bottom_navigation_menu_background"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/ic_navigation_drawer_background">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:src="@drawable/bg"
+            android:scaleType="fitXY"
+            app:layout_constraintDimensionRatio="360:125"
+            android:id="@+id/drawer_bg_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/navigation_drawer_background_image"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_8sdp"
+            android:background="@drawable/rectangle_157"
+            app:layout_constraintTop_toBottomOf="@+id/drawer_bg_image"
+            app:layout_constraintStart_toStartOf="parent"
+            android:alpha="0.2"/>
+
+        <ImageView
+            android:id="@+id/profilePic"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/photo"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@+id/drawer_bg_image"
+            app:layout_constraintBottom_toBottomOf="@+id/drawer_bg_image"
+            app:layout_constraintTop_toTopOf="@+id/drawer_bg_image"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:background="@drawable/circular_stroke_imageview"
+            android:contentDescription="@string/profile_picture"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:lineSpacingExtra="-6sp"
+            android:text="@string/jhon_duo"
+            app:layout_constraintStart_toEndOf="@+id/profilePic"
+            app:layout_constraintTop_toTopOf="@+id/profilePic"
+            app:layout_constraintBottom_toBottomOf="@+id/profilePic"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20ssp"
+            android:letterSpacing="-0.02"
+            android:fontFeatureSettings="pnum, lnum"
+            android:layout_marginStart="@dimen/_11sdp"/>
+
+        <ImageView
+            android:id="@+id/close_drawer"
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_14sdp"
+            android:src="@drawable/close"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"/>
+
+        <ImageView
+            android:id="@+id/settings"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/_39sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:src="@drawable/ic_setting"
+
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"/>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:id="@+id/navigation_drawer_recyclerview"
+            app:layout_constraintTop_toBottomOf="@+id/drawer_bg_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:itemCount="6"
+            tools:listitem="@layout/navigation_drawer_recyclerview_item">
+
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

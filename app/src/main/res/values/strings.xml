@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Qfonapp</string>
+    <string name="navigation_drawer_background_image">Navigation Drawer Background image</string>
+    <string name="profile_picture">Profile picture</string>
+    <string name="jhon_duo">Jhon Duo</string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Close</string>
+    <string name="zero_str">0</string>
+    <string name="second_tab">Second tab</string>
+    <string name="third_tab">Third tab</string>
+    <string name="fourth_tab">Fourth tab</string>
+    <string name="fifth_tab">Fifth tab</string>
+</resources>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_4sdp"
+    android:layout_marginStart="@dimen/_6sdp"
+    android:layout_marginEnd="@dimen/_6sdp"
+    android:background="@drawable/package_recyclerview_item_background">
+
+    <ImageView
+        android:id="@+id/user_image"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_17sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:contentDescription="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="#717272"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/user_image"
+        app:layout_constraintStart_toEndOf="@+id/user_image"
+        app:layout_constraintTop_toTopOf="@+id/user_image"
+        tools:text="john" />
+
+    <ImageView
+        android:id="@+id/img_more_option"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_17sdp"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_19sdp"
+        android:contentDescription="@null"
+        android:src="@drawable/dot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_add_people"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:contentDescription="@null"
+        android:src="@drawable/add_friend"
+        app:layout_constraintDimensionRatio="20:18.12"
+        app:layout_constraintEnd_toStartOf="@+id/img_more_option"
+        app:layout_constraintTop_toTopOf="@+id/img_more_option" />
+
+    <ImageView
+        android:id="@+id/img_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:contentDescription="@null"
+        app:layout_constraintDimensionRatio="345:231"
+        app:layout_constraintEnd_toStartOf="@+id/img_more_option"
+        app:layout_constraintTop_toBottomOf="@+id/user_image" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:id="@+id/video_btn"
+        android:visibility="gone"
+        android:elevation="@dimen/_2sdp"
+        android:src="@drawable/player"
+        app:layout_constraintStart_toStartOf="@+id/img_content"
+        app:layout_constraintTop_toTopOf="@+id/img_content"
+        app:layout_constraintBottom_toBottomOf="@+id/img_content"
+        app:layout_constraintEnd_toEndOf="@+id/img_content"/>
+
+    <ImageView
+        android:id="@+id/whatsapp"
+        android:src="@drawable/whatsapp"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_11sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/share"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_content" />
+
+    <ImageView
+        android:id="@+id/share"
+        android:src="@drawable/send"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/whatsapp"
+        app:layout_constraintDimensionRatio="5:4"
+        app:layout_constraintEnd_toStartOf="@+id/like_cl"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/whatsapp"
+        app:layout_constraintTop_toTopOf="@+id/whatsapp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/like_cl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/share"
+        app:layout_constraintEnd_toStartOf="@+id/comment_cl"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/share"
+        app:layout_constraintTop_toTopOf="@+id/share">
+
+        <ImageView
+            android:id="@+id/like"
+            android:src="@drawable/like"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_17sdp"
+            android:contentDescription="@null"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/number_of_likes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/zero_str"
+            android:textColor="#C5C9D1"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginStart="@dimen/_4sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/like"
+            app:layout_constraintStart_toEndOf="@+id/like"
+            app:layout_constraintTop_toTopOf="@+id/like" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/comment_cl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/like_cl"
+        app:layout_constraintEnd_toStartOf="@+id/img_download"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/like_cl"
+        app:layout_constraintTop_toTopOf="@+id/like_cl">
+
+        <ImageView
+            android:id="@+id/comment"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:contentDescription="@null"
+            android:src="@drawable/msg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/number_of_comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/zero_str"
+            android:textColor="#C5C9D1"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:includeFontPadding="false"
+            app:layout_constraintBottom_toBottomOf="@+id/comment"
+            app:layout_constraintStart_toEndOf="@+id/comment"
+            app:layout_constraintTop_toTopOf="@+id/comment" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/img_download"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_18sdp"
+        android:contentDescription="@null"
+        android:src="@drawable/downloads"
+        app:layout_constraintBottom_toBottomOf="@+id/comment_cl"
+        app:layout_constraintDimensionRatio="20.57:18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/comment_cl"
+        app:layout_constraintTop_toTopOf="@+id/comment_cl" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
